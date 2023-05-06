@@ -17,7 +17,7 @@ if __name__ == '__main__':
     missing_counties_list = []
     score = Scoreboard()
 
-    while len(already_guessed) <= 42 and score.score <= 42:
+    while len(already_guessed) < 42 and score.score < 42:
         sleep(0.1)
         screen.update()
         guess = screen.textinput("Make a guess", "Ghicește un județ")
