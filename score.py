@@ -27,3 +27,7 @@ class Scoreboard(Turtle):
         self.write(f"Score is: {self.score}", move=False, align="center", font=FONT)
         self.goto(-170, 250)
         self.write(f"High_score is: {self.high_score}", move=False, align="center", font=FONT)
+
+    def game_finish(self):
+        self.goto(0, 0)
+        self.write("CONGRATULATIONS!", align="center", font=('Comic Sans', 50, "normal"))

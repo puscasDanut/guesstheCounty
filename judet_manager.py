@@ -18,3 +18,4 @@ class County(Turtle):
         else:
             self.write(self.name, move=False, align="center", font=FONT_SMALL)
 
+
