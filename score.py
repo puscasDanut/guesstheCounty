@@ -31,3 +31,8 @@ class Scoreboard(Turtle):
     def game_finish(self):
         self.goto(0, 0)
         self.write("CONGRATULATIONS!", align="center", font=('Comic Sans', 50, "normal"))
+        self.goto(0, -75)
+        if self.score < 42:
+            self.write(f"YOU GUESSED: {self.score} counties", align="center", font=('Comic Sans', 30, "normal"))
+        else:
+            self.write(f"YOU GUESSED all the counties", align="center", font=('Comic Sans', 30, "normal"))
