@@ -13,17 +13,9 @@ if __name__ == '__main__':
 
     data = pandas.read_csv("judete.csv")
     counties_list = data.county.to_list()
-    data_list = data.to_dict()
-    print(data_list)
+
     already_guessed = []
     score = Scoreboard()
-
-    # screen.listen()
-    # screen.onkeypress(key="Up", fun=arad.move_up)
-    # screen.onkeypress(key='Down', fun=arad.move_down)
-    # screen.onkeypress(key='Right', fun=arad.move_right)
-    # screen.onkeypress(key='Left', fun=arad.move_left)
-
 
     while True:
         sleep(0.1)
@@ -34,7 +26,8 @@ if __name__ == '__main__':
                 print("Already Guessed")
                 continue
             print("All good")
-            new_judet = County()
+            # new_judet = County()
+            print(data[data.county == guess.title()])
             already_guessed.append(guess.title())
             score.increase_score()
             score.write_score()
