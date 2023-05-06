@@ -10,7 +10,7 @@ class Scoreboard(Turtle):
         self.hideturtle()
         self.penup()
         self.score = 0
-        with open("high_score.txt", mode="r") as high_score:
+        with open("guesstheCounty\high_score.txt", mode="r") as high_score:
             self.high_score = int(high_score.read())
         self.write_score()
 
