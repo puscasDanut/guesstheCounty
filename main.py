@@ -1,17 +1,19 @@
 from turtle import Screen
-import turtle
 from judet_manager import County
 from time import sleep
-import pandas
+import pandas as pd
 from score import Scoreboard
+import os
+
+main_dir = os.path.dirname(__file__)
 
 if __name__ == '__main__':
     screen = Screen()
     screen.setup(width=700, height=600)
-    screen.bgpic("Romania.gif")
+    screen.bgpic(main_dir+"/Romania.gif")
     screen.tracer(0)
 
-    data = pandas.read_csv("judete.csv")
+    data = pd.read_csv(main_dir+"/judete.csv")
     counties_list = data.county.to_list()
     already_guessed = []
     missing_counties_list = []
@@ -37,10 +39,10 @@ if __name__ == '__main__':
     for county in counties_list:
         if county not in already_guessed:
             missing_counties_list.append(county)
-    missing_counties = pandas.DataFrame(missing_counties_list)
-    missing_counties.to_csv("missing_judete.csv")
+    missing_counties = pd.DataFrame(missing_counties_list)
+    missing_counties.to_csv(main_dir+"/missing_judete.csv")
 
     screen.clear()
-    screen.bgpic("Romania.gif")
+    screen.bgpic(main_dir+"/Romania.gif")
     score.game_finish()
     screen.exitonclick()
