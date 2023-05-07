@@ -1,4 +1,7 @@
 from turtle import Turtle
+import os
+
+main_dir = os.path.dirname(__file__)
 
 FONT = ('Comic Sans', 20, "normal")
 
@@ -10,7 +13,7 @@ class Scoreboard(Turtle):
         self.hideturtle()
         self.penup()
         self.score = 0
-        with open("high_score.txt", mode="r") as high_score:
+        with open(main_dir+"/high_score.txt", mode="r") as high_score:
             self.high_score = int(high_score.read())
         self.write_score()
 
@@ -18,7 +21,7 @@ class Scoreboard(Turtle):
         self.score += 1
         if self.score > self.high_score:
             self.high_score = self.score
-            with open("high_score.txt", mode="w") as high_score:
+            with open(main_dir+"/high_score.txt", mode="w") as high_score:
                 high_score.write(str(self.high_score))
 
     def write_score(self):
