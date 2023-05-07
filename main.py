@@ -34,9 +34,7 @@ if __name__ == '__main__':
             score.increase_score()
             score.write_score()
 
-    for county in counties_list:
-        if county not in already_guessed:
-            missing_counties_list.append(county)
+    missing_counties_list = [county for county in counties_list if county not in already_guessed]
     missing_counties = pandas.DataFrame(missing_counties_list)
     missing_counties.to_csv("missing_judete.csv")
 
